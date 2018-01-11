@@ -251,7 +251,7 @@
 			  }
 		  }).fail(function() {
 			  window.alert('wa! your ajax fly away!');
-                  });
+          });
 
           infowindow.open(map, marker);
         }
@@ -354,7 +354,7 @@
 	  function zoomToAreaInput(){
           var address = document.getElementById('zoom-to-area-text').value;
           for (let i = 0; i < markers.length; i++) {
-              if (!markers[i].title.toLowerCase().indexOf(address.toLowerCase())) {
+              if (markers[i].title.toLowerCase().indexOf(address.toLowerCase())>-1) {
                   markers[i].setMap(map);
   	          } else {
                   markers[i].setMap(null);
