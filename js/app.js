@@ -249,7 +249,9 @@
 				      clearTimeout(wikiReqTimeout);
 				  }
 			  }
-		  }).fail(function() { infowindow.setContent(infoWindowContent + '<div>No Information Found</div>'); });
+		  }).fail(function() {
+			  window.alert('wa! your ajax fly away!');
+                  });
 
           infowindow.open(map, marker);
         }
@@ -350,7 +352,7 @@
       }
 
     var mapErrorHandler = function(){
-		alert('wa! your network fly away!');
-	}
+        window.alert('wa! your network fly away!');
+    }
 
 
