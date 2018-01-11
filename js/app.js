@@ -139,7 +139,7 @@
 
         //注册文本框的textchange事件
 		document.getElementById('zoom-to-area-text').addEventListener("input", function () {
-		    zoomToArea();
+		    zoomToAreaInput();
         });
 
         // Add an event listener so that the polygon is captured,  call the
@@ -349,6 +349,17 @@
 				}
 			}
         }
+      }
+
+	  function zoomToAreaInput(){
+          var address = document.getElementById('zoom-to-area-text').value;
+          for (let i = 0; i < markers.length; i++) {
+              if (!markers[i].title.toLowerCase().indexOf(address.toLowerCase())) {
+                  markers[i].setMap(map);
+  	          } else {
+                  markers[i].setMap(null);
+              }
+          }
       }
 
     var mapErrorHandler = function(){
